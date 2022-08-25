@@ -1,0 +1,157 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Type_OTP_Sequence" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="OTP_Value" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>974,1675</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Type_OTP_Sequence_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="34">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="33">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Type_OTP_Sequence" sap:VirtualizedContainerService.HintSize="476,1610" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Default="https://www.flipkart.com/" Name="str_HomePage2" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Type_OTP_Sequence&quot;]" />
+    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Use Browser Chrome: Online Shopping Site for Mobiles, Electronics, Furniture, Grocery, Lifestyle, Bo" sap:VirtualizedContainerService.HintSize="434,1256" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" ScopeGuid="5da1ff76-254c-4f70-b27b-25ec08a65b6a" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,1040" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="str_Pwd" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'OTP sent to Email'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="Simulate" ScopeIdentifier="5da1ff76-254c-4f70-b27b-25ec08a65b6a" Text="[OTP_Value]" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.flipkart.com/" DesignTimeRectangle="776, 392, 335, 38" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl tag='DIV' innertext='Enter OTP' /&gt;&lt;webctrl tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl class='_2IX_2- VJZDxU' aaname='' tag='INPUT' type='text' /&gt;" Guid="858924fd-a0d6-477c-ac61-a2e18dc958b5" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAVMAAAAqCAYAAAAOEbjJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANlSURBVHhe7dlXSyNRGIdxP85+wP0Yohd27F1QxAvBC7GAYscGYtfYsGAJ9v4u/9eZIaIJcfcE9uL5wUEzmczM1ZNzTooscnt7a21tbbaysmLv7+/R0Q9vb2+WSqXs8PDQtra2bG1tzU5OTuzu7s5WV1etsrLS+vr67Pj42M/V0Lnr6+u2ublpV1dXfs3Ly0vb29uz3d1dH6+vr9EdzJ6enmxgYMCGh4ft+fnZj+n98fFxa25utsfHRz8m+/v7Vl5e7n9j3z3/xcWFtbe329LSkr8GgELJK6YKWX19vYdJsevt7bWWlhYP4sLCgoetu7vbg/vy8mLLy8t+7tDQkEe2p6fHgzo3N2dVVVXW2dlpIyMjHtCYwtzV1eVxzrz/9va2x1rxjuUb03Q67dfUfQGgkD7FVMFUpGpra62urs46Ojp8hqmYNjY22tTUlAdQYdT7i4uLHsGGhgYbGxvz65yfn1tTU5PPSDXDVNA0s5yZmfGoKbJnZ2d+zcxoahapQO/s7ERHPnwXznxiqtmxnk/PeXR0FJ0FAIXxKaatra02OzvrsVQEr6+vfaap8CmICpXotQI6PT39JaZa2peWllpJSYn/jcfo6KjHVLPUh4cHPzeT7q94b2xsREc+aFugoqLCDg4OoiPZY6pwFhcXJ/fULFhBVVgBoJDyXubnG1PNSLUs1xaArqlxc3Nj9/f3OWOqY9oSmJiYSPZSFUFtIyiSukYsW0z1ZTA/P+/n6rky92QBoJC+zEwVL4VI8dPQsj5XTPW/Pqcfj3R+vKzv7+/3Jb+W9AqkfpzKFVOFUz8UKeh6Bl1H+6d6rVBnBj5bTLN9GQBAoX3ZMy0rK7OamppkaHmumV62mCpciqQ+p3MV39PTU//hp7q62vdfBwcHPdC5Yir6bLzPGX92cnLSI52JmAL43yQxBQD8PWIKAAEQUwAIIIlpURFdBYC/RUwBIABiCgABEFMACICYAkAAxBQAAiCmABAAMQWAAIgpAARATAEgAGIKAAEQUwAIgJgCQADEFAACIKYAEAAxBYAAiCkABEBMASAAYgoAAVBQAAiAmAJAAMQUAAIgpgAQADEFgACIKQAEQEwBIABiCgABEFMACCCJ6a/faQaDwWD8cMSSmKZSKQaDwWD8cMRY5gNAAMQUAP6Z2R/ldGYdeZXlBgAAAABJRU5ErkJggg==" InformativeScreenshot="5107c2ed26640746de9ef093db43b324.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Shopping Site for Mobiles, Electronics, Furniture, Grocery, Lifestyle, Books &amp;amp; More. Best Offers!' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="776, 339, 109, 17" ElementType="Text" FriendlyName="'OTP sent to Email'" FullSelectorArgument="&lt;webctrl aaname='OTP sent to Email' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='OTP sent to Email' tag='SPAN' type='' class='' check:innerText='OTP sent to Email' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHEAAAAVCAYAAABxGwGcAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOkSURBVGhD7Zixa9tAFMb7r9wm8GDIEMgQT/FU0yGmizdBBkPBhkK3IApFZPEUTCGYgBGFYDw5k4eCh4CWIA9GGYozBGcwaDBoCGgwfH0nnWxJlu24KA0W+sFBTne+u/c+3XtP+YCMvScTMQVkIqaATMQUkIm4VxhQGYN6L7qCsIhzC/plFcUDBsYkHH5W0PnjiEELHZk/X9MujPg5uUOUzzsYv3irpAGrK4dt9Jvrg4SxTOgPluhsFdFC70xC/osGc+rAebEx+a2gyIpoPogpAYwLBrnrL+7jiRh6PjOh0bpSrQ9bPHp7Ys4RYtv4ZlwR5Q6t8vZYt1VIZz2x1zYR71VIxyoM/+IJxu0yWIwArxaR89xBhcno/Q+rXdIjYpgtIpo/C2A/dNEL8KihxFToc9EXJCWiM2qhepJ3w5F0JKOpBya90C3+Wkaeh6qDMpTuGP47xvevXPXQOjuEJH7bGtHotAOZz/db1Nnrxm1juRelAPlShxWx2WeziNzRFTRumpCPJNqD0lKNotujjmb0rD5PA6hijB0UUb0yF3aG99oiIndKqT0WvQCu0TI6U9EXvFpEZ4LB9yLYqYaJeLTA0aHkClDvvHtuP7RorzK0J97ja0mQ2yZs7syZDvVEgnLnmcf3ZycKBs/UnzswryliLIzd8SbOx9BOGcqXhreXM0aHUkCBclzA1QvicyJFMXfUc7R87Z/bQJPWZjny4aN31sltHVKu4c2fm2geF6D0xVmeyN/kEz+FvZuIYePyKFZbMOISohCx3jYwsT13OTMbDjf+oYlCjhwTuA2Tm8qieFjZn9LB0pE7ihizl2d3Hf2Yc2+/iWF/uS9csOgJ+pREtX2bXcJn20nENw2nm5jq0M6rKFHokY4CIdMVJfpCUBMGJSoi/+2KKKti+CQqImHpTVQ/inAqmn+2nUR0C5ucAj0SPxIpbNYxG0MfTpYha9qHciyhMaS/hw1InzTExAaXREV8z5so/m6N/I3CZ9tNRJoW+sRwEvrE2ETUgBkleF9EnisoBy5y4tyG+UtBQ/fmbhbRRr9G6YEKBEQiiEdkPCYn9moFSOeD9TkxKRHdSCdD49/jFFqtkUY58Z9FJDZ+7IdJRETCHmqon/rVabgC5RVjq1pcVIzBfxpsFpF0uG+gRM5gi2+sMCvj0er0YoBJ7AsgHMvnRZsr1I4ikrXjroKy6/O8a2Pr27I+2V3EjL0kEzEFZCKmgEzEFJCJmAIyEfce4C/ZH0XgyVOjpwAAAABJRU5ErkJggg==" SearchSteps="Selector, FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Enter the New password" Title="User can set the new password">
+              <ui:InputDialog.Result>
+                <OutArgument x:TypeArguments="x:String">[str_Pwd]</OutArgument>
+              </ui:InputDialog.Result>
+            </ui:InputDialog>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'OTP sent to Email'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="Simulate" ScopeIdentifier="5da1ff76-254c-4f70-b27b-25ec08a65b6a" Text="[str_Pwd]" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.flipkart.com/" DesignTimeRectangle="776, 464, 335, 38" ElementType="InputBoxPassword" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='password' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='password' class='_2IX_2- VJZDxU' aaname='' /&gt;" Guid="ca87d5bc-b532-41c1-b8b4-c112a07e336f" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAVMAAAAqCAYAAAAOEbjJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAVbSURBVHhe7ZwJTxRLFEbfv1dBdhBkB0EhLBJZDJiwhFUMm+xG0ESDQCAsshkl9XKKvpOeERl4VGJe5ztJZaarqrurJuH0rVut/zghhBD3RjIVQogASKZCCBEAyVQIIQIgmQohRAAkUyGECIBkKoQQAZBMhRAiAJKpEEIEQDIVQogASKZCCBEAyVQIIQIgmQohRAAkUyGECIBkKoQQAZBMhRAiAJLpX6SlpcXV1NS48/PzqEYI8X8lTaY/f/50w8PDrqioyD148MA9evTINTQ0uK2trahHGDY3N93jx4/9Paw8fPjQVVZWuk+fPkW9ko9kKkRySJNpV1eXl9zY2Jjb3993nz9/9jItKChwX758iXrdzMHBgSsuLnZv3ryJan7HZDo5Oen7U+xe+fn5bmNjI+qZbCRTIZJDSqYIraSkxPX390c1V1BfVlbmenp6opqbuYtM5+fno5orjo+PXUVFhWtra4tqko1kKkRySMn06OjIPXnyxLW3t7vLy8uo1rlfv3651dVV9/Hjx6jG+WP6sjTPzc31ES1CQKDxpTtSRa6Z/EmmkCmYmZkZL3PuRdrh+fPnadfc29vzdbTRp7q6Oi0tcVM743369Kk7OTnxx9yTe798+dIfw9evX11hYaFbXFz0x/RhvsybOfIAYoyGza2vr8+32VzsPBtHc3Ozb5NMhUgGacv8oaEh/8eOYObm5q79I2cJjlwGBgZ8KgCxIg1EAfeJTH/8+OHq6+tdU1OTl/jS0pLvx7i4F0LnXi9evPDt1p+C9CiNjY1e9IeHh1nb19fXfQqD8YCNi3YeLjA1NeXnw/25HuczBuZNHb8D55hQ7Rp5eXlucHDQ92Os/D6kMN69e5c6j99aMhUiGaTJFBAW8iF6opiIACkgss7OTn9sIBwEg0j/q0zZ/EI+OTk5bnp62tchGaQXj5S5rgmIe3Hf7u7uqNW57e1tf7y7u5u1nYiUB8fo6Khv49p1dXWuvLzcLS8v+zpSDq2trf478kWICDIOv4eNyeYWj1Z3dnb8A2hiYiKquYLfUjIVIhn8JlODKIzolBymbQpZKiC+lLeCLJDGXWSaeQ3qeJvA5MknkZwt861fXEAjIyN+yc0YkR7RLGI2srWzpCcSPjs78w+Ot2/fejmSIzbZ8rAAZH9d6gJxWv11DwrqeEOCzzjKmQqRHFIyZemJPL9//x7VXBHfFLJIr7e313/PLEiKz9vKNL6bnxmBAhEqElxYWEgJMB6ZGnx///69z/dy3draWnd6ehq13txOLrS0tNR/Mk8eCHyvqqry4uXhQR1IpkKIP5GSKctaIjjbaDGI2Ni04Q+faJXXl4jg+B7HRHgXmV63ARXnOtnwtoHVffjwwQuQ16oMImjylcgzWzvwEEGmzMtyscyB89gkot7mepdlfnxuyBiZapkvRHJJyZTIj8gN0YyPj3vJfPv2zdeRxyRqBT457ujo8HlH6/Ps2TN3cXGRki8iIj8ZX1Ibt5UpS342adiA4lqvX7/2wrcdeKJZIkc2hcjrMp5Xr16l3ovN1g6WByZ9YMt5QJDUMQbjLhtQmXPTBpQQySYtZ4oskAeRpW1A8a+S1tbWoh5XrKyseEnRjhB49YhXkIzZ2VkvFNuUyuS2MmU85C4RKPdCZMjQ8rOAIKlnHPRhXPHIMVs7INH4NYEIHfkx1jiI7zavRmXOzc6zcfCw4QEkmQqRDP64ASWEEOL2SKZCCBEAyVQIIQIgmQohRAAkUyGECIBkKoQQAZBMhRAiAJKpEEIEQDIVQogASKZCCBEAyVQIIQKQkin/s5KKioqKyt2KochUCCECIJkKIcS9ce5fklJT0R66Mc8AAAAASUVORK5CYII=" InformativeScreenshot="9881b4272b8f0df18190b0d8f80a664b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Shopping Site for Mobiles, Electronics, Furniture, Grocery, Lifestyle, Books &amp;amp; More. Best Offers!' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="776, 339, 109, 17" ElementType="Text" FriendlyName="'OTP sent to Email'" FullSelectorArgument="&lt;webctrl aaname='OTP sent to Email' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='OTP sent to Email' tag='SPAN' type='' class='' check:innerText='OTP sent to Email' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHEAAAAVCAYAAABxGwGcAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOkSURBVGhD7Zixa9tAFMb7r9wm8GDIEMgQT/FU0yGmizdBBkPBhkK3IApFZPEUTCGYgBGFYDw5k4eCh4CWIA9GGYozBGcwaDBoCGgwfH0nnWxJlu24KA0W+sFBTne+u/c+3XtP+YCMvScTMQVkIqaATMQUkIm4VxhQGYN6L7qCsIhzC/plFcUDBsYkHH5W0PnjiEELHZk/X9MujPg5uUOUzzsYv3irpAGrK4dt9Jvrg4SxTOgPluhsFdFC70xC/osGc+rAebEx+a2gyIpoPogpAYwLBrnrL+7jiRh6PjOh0bpSrQ9bPHp7Ys4RYtv4ZlwR5Q6t8vZYt1VIZz2x1zYR71VIxyoM/+IJxu0yWIwArxaR89xBhcno/Q+rXdIjYpgtIpo/C2A/dNEL8KihxFToc9EXJCWiM2qhepJ3w5F0JKOpBya90C3+Wkaeh6qDMpTuGP47xvevXPXQOjuEJH7bGtHotAOZz/db1Nnrxm1juRelAPlShxWx2WeziNzRFTRumpCPJNqD0lKNotujjmb0rD5PA6hijB0UUb0yF3aG99oiIndKqT0WvQCu0TI6U9EXvFpEZ4LB9yLYqYaJeLTA0aHkClDvvHtuP7RorzK0J97ja0mQ2yZs7syZDvVEgnLnmcf3ZycKBs/UnzswryliLIzd8SbOx9BOGcqXhreXM0aHUkCBclzA1QvicyJFMXfUc7R87Z/bQJPWZjny4aN31sltHVKu4c2fm2geF6D0xVmeyN/kEz+FvZuIYePyKFZbMOISohCx3jYwsT13OTMbDjf+oYlCjhwTuA2Tm8qieFjZn9LB0pE7ihizl2d3Hf2Yc2+/iWF/uS9csOgJ+pREtX2bXcJn20nENw2nm5jq0M6rKFHokY4CIdMVJfpCUBMGJSoi/+2KKKti+CQqImHpTVQ/inAqmn+2nUR0C5ucAj0SPxIpbNYxG0MfTpYha9qHciyhMaS/hw1InzTExAaXREV8z5so/m6N/I3CZ9tNRJoW+sRwEvrE2ETUgBkleF9EnisoBy5y4tyG+UtBQ/fmbhbRRr9G6YEKBEQiiEdkPCYn9moFSOeD9TkxKRHdSCdD49/jFFqtkUY58Z9FJDZ+7IdJRETCHmqon/rVabgC5RVjq1pcVIzBfxpsFpF0uG+gRM5gi2+sMCvj0er0YoBJ7AsgHMvnRZsr1I4ikrXjroKy6/O8a2Pr27I+2V3EjL0kEzEFZCKmgEzEFJCJmAIyEfce4C/ZH0XgyVOjpwAAAABJRU5ErkJggg==" SearchSteps="Selector, FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ClickType="Single" DisplayName="Click 'Login'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5da1ff76-254c-4f70-b27b-25ec08a65b6a" Version="V1">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.flipkart.com/" DesignTimeRectangle="776, 537, 335, 48" ElementType="Button" FriendlyName="'Login'" FullSelectorArgument="&lt;webctrl aaname='Login' tag='BUTTON' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Login' tag='BUTTON' type='submit' class='_2KpZ6l _2HKlqd _3AWRsL' check:innerText='Login' /&gt;" Guid="39c6c6d5-9e7e-48c3-a056-83d4cdd1244b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAVMAAAA0CAYAAAA3zdsiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAM5SURBVHhe7dzNShtRGIDh3EfvoD97r8Rdd91Jf9a6ywV0IxQRSjdFkC6EFlwUCqWIG0MRQhEMIhFBaqVkGIQxzjlf55ufEOt0Ysl3jMJ74IFkzsm4ezkzE9MSBoPBYEw9RjH13otzTtI0BQBMoL3UblYjj6lOXHx9L8NXT+Ty2QMAwATaS+2m9jOPqZY1SRIZvnxc+wEAQD3tpvZTO9rSrWocx7ULAQDNtJ/a0ZZuUaMoql0EAGim/dSO5jEdDAa1iwAAzbSfxBQApkRMAcAAMQUAA8QUAAwQUwAwQEwBwAAxBQADxBQADBBTADBATAHAADEFAAPEFAAMEFMAMEBMEd76Vv4L5HKyVj8/tTlxvUjkvCvudd08EB4xRXjBYzov7jgRcX3xb+vmgfCIKcILHlNg9ogpwrtBTNPVFfFn2aV6NX53xK3Ojc2/Ex+Xcy4S3+0Wr/fa+bw70TfZ8fVsffX3Djezc2Y7Vh0uEb/blrQ8H2CNmCK8STFdzEI61AUayY3Mfr5chvvlPdC2+HM9kIXx8EsR0nx9NppiWq3f6ZTrT7kNgGCIKcKbENN0p1/Mf396/djuglx+LnehhyujnWW6Xc43xfTnxmi92yt2vf5b8R6wRkwR3oSYuiOdLENYHa8+c7w2CqvfGpvfKnevTTEd+3ujmI6fAzBETBHeNDE9ynaj5S6UmOIuI6YIb0JMJ17mf+oUr//3Mp+Y4hYRU4RXxW3QEb+9cYX7MN/wAKorblHP0S6f5Ccivc2bP4AiprhFxBThVXGrG2UMJ3016nL5r69GHZ0Wr38s5fPEFLNGTHE/LC9Imu9SC65bxJSn87griCnugSXxg6yc5/vF7YFrtwGA2SOmuBfStSyicfnfTDr+vg0AzBgxBQADxBQADBBTADBATAHAADEFAAPEFAAMEFMAMEBMAcAAMQUAA8QUAAwQUwAwQEwBwAAxBQADxBQADFyJaRRFcvHiUe1CAEA97ab2M4+pc07iOJZfH99I8vxh7QcAAFdpL7Wb2k/taMt7L0mSyNnZmfT7fTk4OJBerwcA+AftpPZSu6n91I629MfLdYuqB7Swev0PAGimvdRuaj9FRP4A/T6oS6plGoEAAAAASUVORK5CYII=" InformativeScreenshot="c3ac247dfc09dbd5578943ff10af4209.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Online Shopping Site for Mobiles, Electronics, Furniture, Grocery, Lifestyle, Books &amp;amp; More. Best Offers!' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="925, 552, 37, 18" ElementType="Text" FriendlyName="'Login'" FullSelectorArgument="&lt;webctrl aaname='Login' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;button&amp;gt;span' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Login' type='' tag='SPAN' class='' check:innerText='Login' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACkAAAAWCAYAAABdTLWOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGdSURBVEhL7ZXNasJAEMf7Hr6IT+Ktt958A73lAXrxIkLpLSA9eCj0UOilBC9KEUIR9BAMglRKUSQgZnens18xJBqTdGt7cOAPyc5k58fszOYqvKnAf9cF0pQukKa0h+w6IGxhp4LMqAp0ugYIXKC3h/zHdUbIGtD5FoDOgN0d8h/XGSHLqxAk6bSBfeKRafsaAu1UY/57YBvlo2tgriufx5bw0wV/wfUuxut83hPuiRXmRrfARhYQtZ9WfsgGAu54AE/eQ01EOOwmqscsYAFfwITeiwQU8WhZkDp+MFTxy1Q75IYkg5n0v12n10Z1CJ9V1bx2VAnSV/4syI9eFE/H8pTYq3zXyg1Jfe5UCfS6/mZuR8DMifkdVe0syFi+CDK+B8oMpI/VU1X7U8iTx/2IPcWt6HGXglwNgfVxMGKiD7WMwcHLucH3wMERk42DMMWJzTs4pSAPmUpy6goKW4kryF/K5/em8P8c0oRadSCiqlLUlZDJaS0qg5BNYCskCiayTVLtUF5GK0lshNuovwe3ZDuUlNnj/iVdIM2oAt+KiM9NkHIDuQAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1616, 876" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAPFSURBVFhHxZZbSBRhFMc/Q0i6vIQVIWW0FZVB+lYIJb1kVE8F2Us3eukl8aGLWpGFdAEvZFAUEUFR+CBBN7ttmlne1rumLu5u6uquOu6u2+646+6cvjPr0DR7atdLNPBjhu+c8/3Pd74z3wxTLnCxDLCzR2Bh1f8UriG52cEp2V8XOJlTxhADanx1i8Betey3sWiQY+pZuM3DHMiU7K/LZ48TjDWJoSAVHa918Kx4C4hfF4TZ/sRo9RI5xqxfGWYz1q0G/9h8YUo2dJkMiSfa9Gt9zW/XA1RzRxWTVXFg+7AibDwSVh6Dsdpx1EAt1JTFzU2rnnZ+0oECdxr8l6i1UJuBj2f2H4mYQKAlk9+Lw8YjIYnPp2Jpu0LkCjhKQAp+pG1/QQpaQHLnkDY1EROQJvYDSA4IepeTdorARAoABEN3wq4mqh4I+FvB57lN2ij84kMI+mtJm5aoEvCMpctVEF3FIHnnkT6INMHA68znq/eGYggfLVElgAgDe+V9xWq4hWzwCCkw6YqV8QhJ4B7JhEmxlvvYwDFwiJyDIuoEEKFvDTgGL8tJ4B7jSkMEeck7wWUvBLtps1wJJQaf3a74EadD14uobci0EkAmf8TyFcbDULcOrF2pMviMY2hDHxRp69puOnW3aEh37gOw07XAzjTIHCp52qeeb9oJRAJXe+zmbSHmbCPE5LaTuFzreVeH/Oc0ARRPzSvzUaJqDMYDeiWGYVfPBdiMBwseuChBJOFCo7Qxrw72FL0ZGROSmpU4njbPZA54VZlhYjmtYcK7Ct8NjtqS+atDx+GPCMwWXH3albIJrfjqSwYx4FhopWIUGIzxg2WWDPRsslJN96D84mfKXw1/uXkms+SF/kiPVhyxmrbWUP5q5iSB3Pv5g1QCftvS75S/GgYj/EcxAgEbC3j6lw0PdCWZzO0pRi3UqxefY5AUO8aBPSZIzf3XBJzfN1iwvNkPb/Xuvv5yHCeV91qFfMIR3Y9jyumHdHfs/EppRFUBaXi+E8t578Wlb1qhaOnqSK+i5mYwzLsxApI9zu3uX2esqc9opSaPBrkfiLkZ2HgzKPB9wr3G0ls6d7Sh4KvKk8248rwnt0zH75QO7SssF9Ju6McV8ISjBLddrXSjHU++iuqjX37TUcF/4PnDLKCO38XnW4Pc5tX6UjDo43sxQwIWBvi51Sawt6DcTPlTMDDxhxkitCSMUifgtceFNZQ/BYPueSIHZkLT+7Re6hWseHekgvInEJnUzrI4IgemS1npYTN+YrXY6pIbKH8NXJNl/QQY2SMPYJ5++AAAAABJRU5ErkJggg==" InformativeScreenshot="9edc372f2b37ed5c87dcbe7161448c99.png" Selector="&lt;html app='chrome.exe' title='Online Shopping Site for Mobiles, Electronics, Furniture, Grocery, Lifestyle, Books &amp;amp; More. Best Offers!' /&gt;" Url="[str_HomePage2]" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Type_OTP_Sequence&quot;]" />
+  </Sequence>
+</Activity>
